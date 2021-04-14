@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Book Library</title>
+        <link rel='stylesheet' type='text/css' href ='main.css'>
+        
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="main_head">Library</h1>
+        </header>
+        <!--page content-->
+        <div class="container">
+            <div class = "buttonContainer"> 
+                <button id="myBtn">New Book</button>
+            </div>
+
+
+            <div class="form-popup" id="myForm">
+                <form class="form-container">
+                  <h1>Add New Book</h1>
+              
+                  <label for="title"><b>Title</b></label>
+                  <input type="text" id="title" placeholder="Enter Title" name="title" required><br>
+              
+                  <label for="author"><b>Author</b></label>
+                  <input type="text" id="author" placeholder="Enter Author" name="author" required><br>
+
+                  <label for="pages"><b>No. of Pages</b></label>
+                  <input type="text" id="pages" placeholder="Enter # of Pages" name="pages" required><br>
+
+                  <label for="read"><b>Read?</b></label>
+                  <input type="text" id="read" placeholder="Yes or No?" name="read" required><br>
+              
+                  <button type="submit" class="btn">Submit</button>
+                  <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+
+
+        </div>
+        <script type='text/javascript' src="book.js"></script>
+    </body>
+
+</html>
