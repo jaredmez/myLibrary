@@ -15,6 +15,7 @@ function Book(title, author, pages, read) {
 //Adds book to library
 function addBooktoLib(userInput) {
     myLibrary.push(userInput);
+    showOff();
 }
 
 //Removes book from Library
@@ -81,12 +82,48 @@ function nuBooktoLibrary(e){
     }
 }
 
-// let REbook = new Book('investments', 'perez', 190, 'yes i read');
-// let housebook = new Book('finance', 'mezzy', 100);
+//create a book card
 
-// var bookLibrary = [];
+function makeBookCard(item) {
+    const library = document.querySelector(".library-container")
+    const bookEl = document.createElement('div');
+    const titleEl = document.createElement('div');
+    const authEl = document.createElement('div');
+    const pagesEl = document.createElement('div');
+    const removeBtn = document.createElement('button');
+    const readBtn =  document.createElement('button');
 
-// bookLibrary.push(housebook, REbook)
-// //bookLibrary.push(REbook);
+    bookEl.classList.add('book');
+    bookEl.setAttribute('id', myLibrary.indexOf(item));
 
-// console.log(bookLibrary[0].info());
+    titleEl.textContent = item.title;
+    titleEl.classList.add('title');
+    bookEl.appendChild(titleEl);
+
+    authEl.textContent = item.author;
+    authEl.classList.add('author');
+    bookEl.appendChild(authEl);
+
+    pagesEl.textContent = item.pages;
+    pagesEl.classList.add('pages');
+    bookEl.appendChild(pagesEl);
+
+    bookEl.appendChild(readBtn);
+
+    removeBtn.textContent = 'Remove';
+    bookEl.appendChild(removeBtn);
+
+    library.appendChild(bookEl);
+
+}
+
+//Display book
+function showOff(){
+    const display = document.querySelector('.library-container');
+    const books = document.querySelectorAll('.book');
+    books.forEach(book => display.removeChild(book));
+
+    for (let i=0; i < myLibrary.length; i++){
+        makeBookCard(myLibrary[i]);
+    }
+}
