@@ -61,9 +61,9 @@ function openForm() {
     document.getElementById("myForm").style.display = "block";
   }
   
-  function closeForm() {
+function closeForm() {
     document.getElementById("myForm").style.display = "none";
-  }
+}
 
 //Once new book info is added, check new input
 var form = document.querySelector(".form-container");
@@ -111,6 +111,8 @@ function makeBookCard(item) {
     bookEl.appendChild(readBtn);
 
     removeBtn.textContent = 'Remove';
+    removeBtn.setAttribute('id', myLibrary.indexOf(item));
+    removeBtn.addEventListener('click', removeBook);
     bookEl.appendChild(removeBtn);
 
     library.appendChild(bookEl);
@@ -126,4 +128,10 @@ function showOff(){
     for (let i=0; i < myLibrary.length; i++){
         makeBookCard(myLibrary[i]);
     }
+}
+
+//functionality for removing book from library
+function removeBook(e) {
+    console.log(e.target.id);
+
 }
