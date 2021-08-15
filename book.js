@@ -111,7 +111,7 @@ function makeBookCard(item) {
     bookEl.appendChild(readBtn);
 
     removeBtn.textContent = 'Remove';
-    removeBtn.setAttribute('id', myLibrary.indexOf(item));
+    removeBtn.setAttribute('id', item.title);
     removeBtn.addEventListener('click', removeBook);
     bookEl.appendChild(removeBtn);
 
@@ -132,6 +132,12 @@ function showOff(){
 
 //functionality for removing book from library
 function removeBook(e) {
-    console.log(e.target.id);
 
+    for (i=0; i < myLibrary.length; i++) {
+        if (myLibrary[i].title == e.target.id) {
+            myLibrary.splice(i,1)
+            showOff();
+            return
+        }
+    }
 }
