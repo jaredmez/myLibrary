@@ -7,43 +7,50 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .main_head {
     text-align: center;
     
 }
 
+body {
+    background-color: paleturquoise;
+}
+
 .header {
     background-color: #ededed;
-    padding: 1em 0;
+    width:100%;
 }
 
 .buttonContainer {
-    margin: auto;
-    width: 90%;
+    width: 250px;
+    margin: 0 auto;
+    background-color: burlywood;
+    
 }
 
-button {
-    padding: 15 px;
-    font-size: 16px;
-}
-
-#myBtn {
+.myBtn {
+    margin: 1em auto;
+    text-align: center;
     padding: 20px 20px;
     background-color: khaki;
     color: blue;
-    justify-content:center;
  
 }
 
-
-.container {
-    background-color: rgb(213, 226, 226);
-    display: block;
-    max-width: 1600px;
-    height: 100vh;
+button {
+    
+    width: 90%;
+    padding: 15px;
+    font-size: 16px;
 }
 
+
+
+
+.page {
+    width: 900px;
+    margin: auto;
+}
 
 /* The popup form - hidden by default */
 .form-popup {
@@ -58,8 +65,7 @@ button {
 
 
 .book {
-    display: flex;
-    flex-direction: column;
+    float: left;
     height: 250px;
     width: 250px;
     margin: 25px;
@@ -83,5 +89,8 @@ button {
     margin-bottom: 20px;
 }
 
-
+.library-container {
+    /* border: 2px solid red; */
+    overflow: hidden;
+}
 

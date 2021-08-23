@@ -56,7 +56,7 @@ function newBookInfo() {
 
 //Opens popup to add new book on click
 
-var btn = document.getElementById('myBtn');
+var btn = document.querySelector('.myBtn');
 
 btn.addEventListener('click', openForm);
 
